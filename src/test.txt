@@ -1,0 +1,34 @@
+ movies : [
+            {
+              id : "1",
+              title:"한지민",
+              poster:"https://img.hankyung.com/photo/201810/01.17893849.1.jpg",
+              alt: "이쁨."
+            },
+            {
+              id : "2",
+              title:"서현진",
+              poster: "https://i.pinimg.com/originals/a2/f7/93/a2f79344470e119fae1bf1a0ca04c61a.jpg",
+              alt: "아름다움."
+            },
+            {
+              id : "3",
+              title:"DeadPool",
+              poster:"https://musicart.xboxlive.com/6/cf96806c-0000-0000-0000-000000000009/504/image.jpg?w=1920&h=1080",
+              alt:"깐지"
+            },
+            {
+              id : "4",
+              title:"IronMan",
+              poster:"https://pixelz.cc/wp-content/uploads/2017/11/iron-man-3-tony-stark-uhd-4k-wallpaper.jpg",
+              alt: "멋짐"
+            },
+            {
+              id : "5",
+              title:"C.Ronaldo",
+              poster:"https://as00.epimg.net/futbol/imagenes/2018/12/10/primera/1544430890_622660_1544430994_noticia_normal.jpg",
+              alt: "호우"
+            }
+            
+          ]
+      })
