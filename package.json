@@ -1,7 +1,7 @@
 {
   "name": "movie_app",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
@@ -35,5 +35,9 @@
   },
   "devDependencies": {
     "gh-pages": "^2.0.1"
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/Price3258/movie_app",
+  "author": "wtkim <rladnjsxo123@naver.com>",
+  "license": "MIT"
 }

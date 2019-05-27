@@ -1,7 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import LinesEllipsis from 'react-lines-ellipsis'
+import MovieGenre from './MovieGenre';
+import MoviePoster from './MoviePoster';
 import './Movie.css';
+
 
 function Movie({title, poster, genres, synopsis}){
     return (
@@ -28,17 +31,17 @@ function Movie({title, poster, genres, synopsis}){
     )
 }
 
-function MoviePoster({poster, alt}){
-    return (
-        <img src={poster} alt={alt} title={alt} className="Movie__Poster" />
-    )
-}
+// function MoviePoster({poster, alt}){
+//     return (
+//         <img src={poster} alt={alt} title={alt} className="Movie__Poster" />
+//     )
+// }
 
-function MovieGenre({genre}){
-    return (
-        <span className="Movie__Genre">{genre}</span>
-    )
-}
+// function MovieGenre({genre}){
+//     return (
+//         <span className="Movie__Genre">{genre}</span>
+//     )
+// }
 
 Movie.propTypes = {
     title: PropTypes.string.isRequired,
@@ -47,13 +50,6 @@ Movie.propTypes = {
     synopsis: PropTypes.string.isRequired
 }
 
-MoviePoster.propTypes = {
-    poster: PropTypes.string.isRequired,
-    alt: PropTypes.string.isRequired
-}
 
-MovieGenre.propTypes ={
-    genre: PropTypes.string.isRequired
-}
 
 export default Movie
