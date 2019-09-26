@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Movie from './Movie';
+import axios from 'axios';
 
 
 
@@ -38,20 +39,15 @@ class App extends Component {
   }
 
    _getMovies = async () => {
-    const movies = await this._callApi();
-    console.log(movies);
-    this.setState({
-      movies
-    })
-  }
-
-
-  _callApi = () => {
-    return fetch('https://yts.am/api/v2/list_movies.json?sort_by=rating')
-    .then(res => res.json())
-    .then(json => json.data.movies)
-    .catch(err => console.error(err))
-  }
+    const {
+      data: {
+        data: { movies }
+      }
+    } = await axios.get(
+      "https://yts-proxy.now.sh/list_movies.json?sort_by=rating"
+    );
+    this.setState({ movies, isLoading: false });
+  };
 
 
   render(){
