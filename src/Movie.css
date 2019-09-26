@@ -1,74 +1,50 @@
-.Movie{
-    background-color:white;
-    width:40%;
+.movies .movie {
+    width: 45%;
+    background-color: white;
+    margin-bottom: 70px;
     display: flex;
+    align-items: flex-start;
     justify-content: space-between;
-    align-items:flex-start;
-    flex-wrap:wrap;
-    margin-bottom:50px;
- 
-    text-overflow: ellipsis;
-    padding:0 20px;
-    box-shadow: 0 8px 38px rgba(133, 133, 133, 0.3), 0 5px 12px rgba(133, 133, 133,0.22);
-}
-
-.Movie__Column{
-    width:30%;
-    box-sizing:border-box;
-    text-overflow: ellipsis;
-}
-
-.Movie__Column:last-child{
-    padding:20px 0;
-    width:60%;
-}
-
-.Movie h1{
-    font-size:20px;
-    font-weight: 600;
-}
-
-.Movie .Movie__Genres{
-    display: flex;
-    flex-wrap:wrap;
-    margin-bottom:20px;
-}
-
-.Movie__Genres .Movie__Genre{
-    margin-right:10px;
-    color:#B4B5BD;
-}
-
-.Movie .Movie__Synopsis {
-    text-overflow: ellipsis;
-    color:#B4B5BD;
-    overflow: hidden;
-}
-
-.Movie .Movie__Poster{
-    max-width: 100%;
+    font-weight: 300;
+    padding: 20px;
+    border-radius: 5px;
+    color: #adaeb9;
+    box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
+      0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
+  }
+  
+  .movie img {
     position: relative;
-    top:-20px;
-    box-shadow: -10px 19px 38px rgba(83, 83, 83, 0.3), 10px 15px 12px rgba(80,80,80,0.22);
-}
-
-@media screen and (min-width:320px) and (max-width:667px){
-    .Movie{
-        width:100%;
-    }
-}
-
-@media screen and (min-width:320px) and (max-width:667px) and (orientation: portrait){
-    .Movie{
-        width:100%;
-        flex-direction: column;
-    }
-    .Movie__Poster{
-        top:0;
-        left:0;
-        width:100%;
-    }
-    .Movie__Column{
-        width:100%!important;
-    }
-}
+    top: -50px;
+    max-width: 150px;
+    width: 100%;
+    margin-right: 30px;
+    box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
+      0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+  }
+  
+  .movie .movie__title,
+  .movie .movie__year {
+    margin: 0;
+    font-weight: 300;
+  }
+  
+  .movie .movie__title {
+    margin-bottom: 5px;
+    font-size: 24px;
+    color: #2c2c2c;
+  }
+  
+  .movie .movie__genres {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    margin: 5px 0px;
+  }
+  
+  .movie__genres li,
+  .movie .movie__year {
+    margin-right: 10px;
+    font-size: 14px;
+  }

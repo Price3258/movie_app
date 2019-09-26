@@ -1,55 +1,34 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import LinesEllipsis from 'react-lines-ellipsis'
-import MovieGenre from './MovieGenre';
-import MoviePoster from './MoviePoster';
-import './Movie.css';
+import React from "react";
+import PropTypes from "prop-types";
+import "./Movie.css";
 
-
-function Movie({title, poster, genres, synopsis}){
-    return (
-        <div className="Movie">
-            <div className="Movie__Column">
-                <MoviePoster poster={poster} alt={title} />
-            </div>   
-            <div className="Movie__Column">
-                <h1>{title}</h1>
-                <div className="Movie__Genres">
-                    {genres.map((genre, index) => <MovieGenre genre={genre} key={index} />)}
-                </div>
-                <div className="Movie__Synopsis">
-                <LinesEllipsis
-                    text={synopsis}
-                    maxLine='3'
-                    ellipsis='...'
-                    trimRight
-                    basedOn='letters'
-                    />   
-                </div>
-            </div>
-        </div>
-    )
+function Movie({ year, title, summary, poster, genres }) {
+  return (
+    <div className="movie">
+      <img src={poster} alt={title} title={title} />
+      <div className="movie__data">
+        <h3 className="movie__title">{title}</h3>
+        <h5 className="movie__year">{year}</h5>
+        <ul className="movie__genres">
+          {genres.map((genre, index) => (
+            <li key={index} className="genres__genre">
+              {genre}
+            </li>
+          ))}
+        </ul>
+        <p className="movie__summary">{summary.slice(0, 180)}...</p>
+      </div>
+    </div>
+  );
 }
-
-// function MoviePoster({poster, alt}){
-//     return (
-//         <img src={poster} alt={alt} title={alt} className="Movie__Poster" />
-//     )
-// }
-
-// function MovieGenre({genre}){
-//     return (
-//         <span className="Movie__Genre">{genre}</span>
-//     )
-// }
 
 Movie.propTypes = {
-    title: PropTypes.string.isRequired,
-    poster: PropTypes.string.isRequired,
-    genres: PropTypes.array.isRequired,
-    synopsis: PropTypes.string.isRequired
-}
+  id: PropTypes.number.isRequired,
+  year: PropTypes.number.isRequired,
+  title: PropTypes.string.isRequired,
+  summary: PropTypes.string.isRequired,
+  poster: PropTypes.string.isRequired,
+  genres: PropTypes.arrayOf(PropTypes.string).isRequired
+};
 
-
-
-export default Movie
+export default Movie;
