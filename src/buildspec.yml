@@ -1,0 +1,17 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 10  
+  pre_build:
+    commands:
+      - yarn install
+  build:
+    commands:
+      - yarn build
+  post_build:
+    commands:
+      - aws s3 rm s3://payhere.in/backup/ --recursive --profile=wtkim
+      - aws s3 cp ./build/ s3://payhere.in/backup/ --recursive --profile=wtkim
+      - aws s3 sync ./build s3://payhere.in --profile=wtkim
